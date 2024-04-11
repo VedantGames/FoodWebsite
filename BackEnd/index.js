@@ -60,31 +60,31 @@ app.post('/sign-in', (req,res) => {
   .catch(e => console.log(e));
 });
 
-app.post('/upload-img-url', async (req, res) => {
-  const {imgUrl:link} = req.body;
-  const fileName = 'Image' + Date.now() + '.jpeg';
-  await imageDownloader.image({
-    url: link,
-    dest: __dirname + '/DishImages/' + fileName,
-  });
-  res.json({
-    url: fileName,
-  });
-});
+// app.post('/upload-img-url', async (req, res) => {
+//   const {imgUrl:link} = req.body;
+//   const fileName = 'Image' + Date.now() + '.jpeg';
+//   await imageDownloader.image({
+//     url: link,
+//     dest: __dirname + '/DishImages/' + fileName,
+//   });
+//   res.json({
+//     url: fileName,
+//   });
+// });
 
-const photoMiddleware = multer({dest:'DishImages/'});
-app.post('/upload', photoMiddleware.array('file', 100), (req,res) => {
-  const files = [];
-  for (let i = 0; i < req.files.length; i++) {
-    const {path, originalname} = req.files[i];
-    const broken = originalname.split('.');
-    const ext = broken[broken.length - 1];
-    const newPath = path + '.' + ext;
-    fs.renameSync(path, newPath);
-    files.push(newPath.replace("DishImages\\", ""));
-  }
-  res.json(files)
-});
+// const photoMiddleware = multer({dest:'DishImages/'});
+// app.post('/upload', photoMiddleware.array('file', 100), (req,res) => {
+//   const files = [];
+//   for (let i = 0; i < req.files.length; i++) {
+//     const {path, originalname} = req.files[i];
+//     const broken = originalname.split('.');
+//     const ext = broken[broken.length - 1];
+//     const newPath = path + '.' + ext;
+//     fs.renameSync(path, newPath);
+//     files.push(newPath.replace("DishImages\\", ""));
+//   }
+//   res.json(files)
+// });
 
 app.post('/save-dish', (req, res) => {
   const {owner, name, discription, addedImages, catagory, price} = req.body;
