@@ -21,7 +21,7 @@ function Dishes() {
           <div key={dish._id} style={{backgroundColor: "tomato", borderRadius: "1rem", overflow: "hidden", height: "15rem", color: "white"}}>
             <div style={{display: "flex"}}>
               <div style={{height: "100%", width: "20rem"}}>
-                <img src={"http://localhost:4000/DishImages/"+dish.images[0]} alt="" style={{height: "100%", width: "100%", objectFit: "cover"}} />
+                <img src={"https://tomato-server.vercel.app/DishImages/"+dish.images[0]} alt="" style={{height: "100%", width: "100%", objectFit: "cover"}} />
               </div>
               <div style={{padding: "1rem", paddingTop: "1.5rem", display: "flex", flexDirection: "column", justifyContent: "space-between"}}>
                 <div>
