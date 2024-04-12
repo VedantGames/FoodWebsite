@@ -74,7 +74,7 @@ function AddDish() {
           <div style={{marginTop: "1rem", display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: "0.5rem"}}>
             {addedImages.length > 0 && addedImages.map(image => (
               <div style={{height: "13rem", borderRadius: "1rem", overflow: "hidden"}}>
-                <img src={"http://localhost:4000/DishImages/"+image} alt="" style={{height: "100%", width: "100%"}} />
+                <img src={"https://tomato-server.vercel.app/DishImages/"+image} alt="" style={{height: "100%", width: "100%"}} />
               </div>
             ))}
             <div>
