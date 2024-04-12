@@ -29,7 +29,7 @@ const Cart = () => {
             return (
               <div key={index}>
                 <div className="cart-items-title cart-items-item">
-                  <img src={"http://localhost:4000/DishImages/" + item.images[0]} alt="" />
+                  <img src={"https://tomato-server.vercel.app/DishImages/" + item.images[0]} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems.filter(value => value.id == item._id)[0].quantity}</p>
