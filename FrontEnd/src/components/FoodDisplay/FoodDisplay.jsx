@@ -30,7 +30,7 @@ const FoodDisplay = ({ category }) => {
                 name={item.name}
                 description={item.description}
                 price={item.price}
-                image={'http://localhost:4000/DishImages/' + item.images[0]}
+                image={"https://tomato-server.vercel.app/DishImages/" + item.images[0]}
                 category={item.category}
               />
             );
